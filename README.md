@@ -4,10 +4,12 @@
 # SPDX-License-Identifier: Apache-2.0
 -->
 
+
+
 Thalamus
 ======
 [![REUSE status](https://api.reuse.software/badge/github.com/cobaltcore-dev/thalamus)](https://api.reuse.software/info/github.com/cobaltcore-dev/thalamus)
-<a href="https://github.com/cobaltcore-dev/thalamus"><img align="left" width="190" height="190" src="./docs/assets/Cortex_Logo_black_space_square_bg_rd@2x.png"></a>
+<a href="https://github.com/cobaltcore-dev/thalamus"><img align="left" width="190" height="190" src="https://github.com/cobaltcore-dev/cortex/blob/ffc7bbd0dd1d58776f8f10b7740d44542764cdcd/docs/assets/Cortex_Logo_black_space_square_bg_rd%402x.png"></a>
 
 Thalamus is a vendor-neutral, Kubernetes-native inference service based on [llm-d](https://llm-d.ai/), the [Gateway API inference extension](https://github.com/kubernetes-sigs/gateway-api-inference-extension), and [Cortex](https://github.com/cobaltcore-dev/cortex).
 
