@@ -9,7 +9,7 @@
 Thalamus
 ======
 [![REUSE status](https://api.reuse.software/badge/github.com/cobaltcore-dev/thalamus)](https://api.reuse.software/info/github.com/cobaltcore-dev/thalamus)
-<a href="https://github.com/cobaltcore-dev/thalamus"><img align="left" width="190" height="190" src="https://github.com/cobaltcore-dev/cortex/blob/ffc7bbd0dd1d58776f8f10b7740d44542764cdcd/docs/assets/Cortex_Logo_black_space_square_bg_rd%402x.png"></a>
+<a href="https://github.com/cobaltcore-dev/thalamus"><img width="150" height="170" src="https://raw.githubusercontent.com/cobaltcore-dev/.github/main/assets/Logo_Cobalt_Core_Typo_white_background.svg"></a>
 
 Thalamus is a vendor-neutral, Kubernetes-native inference service based on [llm-d](https://llm-d.ai/), the [Gateway API inference extension](https://github.com/kubernetes-sigs/gateway-api-inference-extension), and [Cortex](https://github.com/cobaltcore-dev/cortex).
 
