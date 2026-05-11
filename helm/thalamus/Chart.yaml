@@ -1,0 +1,5 @@
+apiVersion: v2
+name: thalamus
+description: Thalamus Inference Service
+type: application
+version: 0.1.0
