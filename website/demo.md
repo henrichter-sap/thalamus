@@ -42,12 +42,6 @@ In the PoC deployment, all container images are stored in and served from SAP's 
 
 ![Container images pulled from Keppel](/keppel-images.gif)
 
-::: warning Known Limitation
-At the time of this recording, Keppel is experiencing issues replicating images
-from `nvcr.io` (NVIDIA's container registry). This is a known issue and will be resolved in a forthcoming
-update.
-:::
-
 ## Accessing Thalamus
 
 Thalamus exposes two access paths: a simple to access, browser-based chat frontend, and an OpenAI-compatible API endpoint for
