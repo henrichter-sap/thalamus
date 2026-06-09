@@ -6,6 +6,7 @@
 
 Thalamus
 ========
+[![Website](https://img.shields.io/badge/docs-cobaltcore--dev.github.io%2Fthalamus-blue)](https://cobaltcore-dev.github.io/thalamus/)
 [![REUSE status](https://api.reuse.software/badge/github.com/cobaltcore-dev/thalamus)](https://api.reuse.software/info/github.com/cobaltcore-dev/thalamus)
 <a href="https://github.com/cobaltcore-dev/thalamus"><img align="left" width="150" height="170" src="https://raw.githubusercontent.com/cobaltcore-dev/.github/main/assets/Logo_Cobalt_Core_Typo_white_background.svg"></a>
 
@@ -15,7 +16,9 @@ Thalamus is built on [llm-d](https://llm-d.ai/), [vLLM](https://vllm.ai/), the [
 
 Supports **Nvidia**, **AMD**, and **Intel** infrastructure.
 
-Learn more about [Thalamus](https://cobaltcore-dev.github.io/thalamus/), [CobaltCore](https://cobaltcore-dev.github.io/docs/) and the broader [Apeiro Reference Architecture](https://apeirora.eu) ecosystem.
+**Full documentation** can be found on our [website](https://cobaltcore-dev.github.io/thalamus/) covering architecture, getting started, API references, and more.
+
+Thalamus integrates natively with [CobaltCore](https://cobaltcore-dev.github.io/docs/), [Greenhouse](https://github.com/cloudoperators/greenhouse) and the broader [Apeiro Reference Architecture](https://apeirora.eu) ecosystem.
 
 > ⚠️ **Status.** Thalamus is under active development. The value propositions and features below reflect the project vision. Not all of them are implemented today. APIs, CRDs, and chart values are subject to change.
 
