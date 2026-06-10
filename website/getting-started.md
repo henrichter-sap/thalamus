@@ -35,6 +35,7 @@ Then create the secret. The chart expects a secret named `hf-token` with key `HF
 kubectl create secret generic hf-token \
   --from-literal=HF_TOKEN="$HF_TOKEN" \
   --namespace thalamus
+```
 
 ## Step 2 — Add Helm repositories
 
