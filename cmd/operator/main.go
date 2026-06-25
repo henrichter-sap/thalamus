@@ -31,6 +31,7 @@ func init() {
 
 func main() {
 	var metricsAddr string
+	
 	var probeAddr string
 
 	flag.StringVar(&metricsAddr, "metrics-bind-address", "0", "The address the metrics endpoint binds to. Use :8080 for HTTP or 0 to disable.")
