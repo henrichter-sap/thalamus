@@ -22,7 +22,17 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  image:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: image
+            target: ''
+            flavor: ''
+          - variant: debug
+            target: debug
+            flavor: 'suffix=-debug,onlatest=true'
     uses: docker/github-builder/.github/workflows/build.yml@v1
     permissions:
       contents: read
@@ -33,9 +43,11 @@ jobs:
       output: image
       push: ${{ github.event_name != 'pull_request' }}
       platforms: linux/amd64,linux/arm64
+      target: ${{ matrix.target }}
       cache: true
       cache-mode: max
       meta-images: ghcr.io/${{ github.repository }}
+      meta-flavor: ${{ matrix.flavor }}
       meta-tags: |
         type=ref,event=branch
         type=ref,event=tag
@@ -43,28 +55,8 @@ jobs:
         type=semver,pattern={{major}}.{{minor}}
         type=sha,format=short
         type=raw,value=latest,enable={{is_default_branch}}
-
-  debug:
-    uses: docker/github-builder/.github/workflows/build.yml@v1
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-      attestations: write
-    with:
-      output: image
-      push: ${{ github.event_name != 'pull_request' }}
-      platforms: linux/amd64,linux/arm64
-      target: debug
-      cache: true
-      cache-scope: debug
-      cache-mode: max
-      meta-images: ghcr.io/${{ github.repository }}
-      meta-flavor: suffix=-debug,onlatest=true
-      meta-tags: |
-        type=ref,event=branch
-        type=ref,event=tag
-        type=semver,pattern={{version}}
-        type=semver,pattern={{major}}.{{minor}}
-        type=sha,format=short
-        type=raw,value=latest,enable={{is_default_branch}}
+    secrets:
+      registry-auths: |
+        - registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
