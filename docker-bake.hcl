@@ -6,6 +6,10 @@ variable "IMAGE" {
   default = "ghcr.io/acme/controller"
 }
 
+variable "PLATFORMS" {
+  default = ["linux/amd64", "linux/arm64"]
+}
+
 group "default" {
   targets = ["image", "debug"]
 }
@@ -21,10 +25,7 @@ target "image" {
     "${IMAGE}:latest",
   ]
 
-  platforms = [
-    "linux/amd64",
-    "linux/arm64",
-  ]
+  platforms = PLATFORMS
 }
 
 target "debug" {
@@ -37,8 +38,5 @@ target "debug" {
     "${IMAGE}:debug",
   ]
 
-  platforms = [
-    "linux/amd64",
-    "linux/arm64",
-  ]
+  platforms = PLATFORMS
 }
