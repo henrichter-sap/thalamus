@@ -72,6 +72,30 @@ jobs:
             type=sha,format=short
             type=raw,value=latest,enable={{is_default_branch}}
 
+      # Single-platform prebuilds populate per-arch GHA cache scopes.
+      # See https://github.com/docker/buildx/discussions/1382
+      - name: Prebuild amd64
+        uses: docker/bake-action@v7
+        with:
+          files: ./docker-bake.hcl
+          targets: default
+          set: |
+            *.platform=linux/amd64
+            *.output=type=cacheonly
+            *.cache-from=type=gha,scope=amd64
+            *.cache-to=type=gha,scope=amd64,mode=max
+
+      - name: Prebuild arm64
+        uses: docker/bake-action@v7
+        with:
+          files: ./docker-bake.hcl
+          targets: default
+          set: |
+            *.platform=linux/arm64
+            *.output=type=cacheonly
+            *.cache-from=type=gha,scope=arm64
+            *.cache-to=type=gha,scope=arm64,mode=max
+
       - name: Build${{ github.event_name == 'pull_request' && '' || ' and push' }} images
         uses: docker/bake-action@v7
         with:
@@ -81,3 +105,6 @@ jobs:
             cwd://${{ steps.meta-debug.outputs.bake-file }}
           targets: default
           push: ${{ github.event_name != 'pull_request' }}
+          set: |
+            *.cache-from=type=gha,scope=amd64
+            *.cache-from=type=gha,scope=arm64
