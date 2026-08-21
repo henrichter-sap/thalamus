@@ -133,7 +133,6 @@ func (r *ModelReconciler) applyOwned(ctx context.Context, model *v1alpha1.Model,
 		return err
 	}
 	u := &unstructured.Unstructured{Object: m}
-	u.SetManagedFields(nil)
 	return r.Apply(ctx,
 		client.ApplyConfigurationFromUnstructured(u),
 		client.FieldOwner("thalamus-operator"),
