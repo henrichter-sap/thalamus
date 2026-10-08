@@ -20,7 +20,7 @@ concurrency:
 jobs:
   e2e:
     name: E2E (docs as tests)
-    runs-on: large_runner_16core_64gb
+    runs-on: ubuntu-22.04  # large_runner_16core_64gb
     timeout-minutes: 30
     env:
       REF: ${{ github.head_ref || github.ref_name }}
